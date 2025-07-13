@@ -1,6 +1,8 @@
 # dotfiles-mini
 A minimal set of dotfiles
 
+Unlike [achimnol/dotfiles](https://github.com/achimnol/dotfiles), this repo does not contain any personal information like account names.
+
 ## Assumption
 
 - Ubuntu 22.04 or later
