@@ -1,7 +1,7 @@
 #!/bin/bash
 mkdir -p ~/downloads
 cd ~/downloads
-ARCH=$(uname -m)
+ARCH=$(uname -m | sed 's/^aarch64$/arm64/')  # normalize the architecture name to x86_64 / arm64
 NVIM_PATH="/usr/local/bin/nvim"
 wget https://github.com/neovim/neovim/releases/download/nightly/nvim-linux-${ARCH}.appimage
 sudo cp nvim-linux-${ARCH}.appimage "${NVIM_PATH}"
