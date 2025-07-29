@@ -11,6 +11,7 @@ sudo chmod +x "${NVIM_PATH}"
 git clone --depth=1 https://github.com/stevearc/oil.nvim ~/.local/share/nvim/site/pack/oil/start/oil.nvim
 git clone --depth=1 https://github.com/nvim-lua/plenary.nvim ~/.local/share/nvim/site/pack/plenary/start/plenary.nvim
 git clone --depth=1 https://github.com/nvim-telescope/telescope.nvim ~/.local/share/nvim/site/pack/telescope/start/telescope.nvim
+git clone --depth=1 https://github.com/ojroques/nvim-osc52 ~/.local/share/nvim/site/pack/osc52/start/osc52.nvim
 sudo apt install -y ripgrep
 
 # Set nvim as the default editor (Ubuntu)
