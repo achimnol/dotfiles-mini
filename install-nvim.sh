@@ -5,6 +5,7 @@ ARCH=$(uname -m | sed 's/^aarch64$/arm64/')  # normalize the architecture name t
 NVIM_PATH="/usr/local/bin/nvim"
 wget https://github.com/neovim/neovim/releases/download/stable/nvim-linux-${ARCH}.appimage
 sudo cp nvim-linux-${ARCH}.appimage "${NVIM_PATH}"
+sudo chmod +x "${NVIM_PATH}"
 
 # Install extensions
 git clone --depth=1 https://github.com/stevearc/oil.nvim ~/.local/share/nvim/site/pack/oil/start/oil.nvim
