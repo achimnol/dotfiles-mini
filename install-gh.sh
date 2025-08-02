@@ -11,3 +11,4 @@
 	&& sudo apt install gh -y
 
 gh config set editor vim
+gh extension install seachicken/gh-poi
