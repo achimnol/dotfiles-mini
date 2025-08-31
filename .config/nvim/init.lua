@@ -11,7 +11,22 @@ vim.keymap.set('n', '<leader>fg', require('telescope.builtin').live_grep, {})
 require("oil").setup()
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
-local plugin_osc52 = require('osc52')
-plugin_osc52.setup(opts)
-vim.keymap.set('n', '<leader>c', plugin_osc52.copy_operator, {expr = true})
-vim.keymap.set('v', '<leader>c', plugin_osc52.copy_visual)
+-- osc52-compatible clipboard setup
+local function paste()
+  return {
+    vim.fn.split(vim.fn.getreg(""), "\n"),
+    vim.fn.getregtype(""),
+  }
+end
+vim.g.clipboard = {
+  name = "OSC52",
+  copy = {
+    ["+"] = require("vim.ui.clipboard.osc52").copy("+"),
+    ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
+  },
+  paste = {
+    ["+"] = paste,
+    ["*"] = paste,
+  },
+}
+vim.opt.clipboard:append { 'unnamed', 'unnamedplus' }
